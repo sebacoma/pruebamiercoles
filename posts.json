@@ -1,21 +1,9 @@
 {
   "posts": [
     {
-      "id": 13,
-      "title": "Post 13",
-      "author": "marcossilva",
-      "image": "https://source.unsplash.com/random/200x200?sig=1"
-    },
-    {
       "id": 14,
       "title": "Post 14",
       "author": "marcossilva",
-      "image": "https://source.unsplash.com/random/200x200?sig=1"
-    },
-    {
-      "id": 15,
-      "title": "Post 15",
-      "author": "rickyurvina",
       "image": "https://source.unsplash.com/random/200x200?sig=1"
     },
     {

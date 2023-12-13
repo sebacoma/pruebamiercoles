@@ -46,7 +46,7 @@ const YourComponent = () => {
       const updatedPosts = posts.filter(post => post.id !== postId);
       setPosts(updatedPosts);
 
-      alert('Post Eliminado', 'El post ha sido eliminado exitosamente');
+      Alert.alert('Post Eliminado', 'El post ha sido eliminado exitosamente');
     } catch (error) {
       console.error('Error deleting post:', error);
     }
@@ -70,6 +70,7 @@ const YourComponent = () => {
       </View>
 
       <FlatList
+        contentContainerStyle={styles.flatListContent}
         data={filteredPosts}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
@@ -93,9 +94,8 @@ const YourComponent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 10,
     paddingTop: 20,
-    backgroundColor: 'black', // Fondo negro
+    backgroundColor: 'black',
   },
   pickerContainer: {
     backgroundColor: '#fff',
@@ -145,10 +145,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   commentContainer: {
-    backgroundColor: '#f0f0f0', // Color de fondo para los comentarios
+    backgroundColor: '#f0f0f0',
     padding: 8,
     borderRadius: 8,
     marginBottom: 8,
+  },
+  flatListContent: {
+    paddingHorizontal: 10,
   },
 });
 
