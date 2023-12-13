@@ -8,13 +8,13 @@ const YourComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const postsResponse = await fetch('http://tu-servidor/posts');
+        const postsResponse = await fetch('http://localhost:3000/posts');
         const postsData = await postsResponse.json();
-        setPosts(postsData.posts);
+        setPosts(postsData);
 
-        const commentsResponse = await fetch('http://tu-servidor/comments');
+        const commentsResponse = await fetch('http://localhost:3000/');
         const commentsData = await commentsResponse.json();
-        setComments(commentsData.comments);
+        setComments(commentsData);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -34,6 +34,12 @@ const YourComponent = () => {
     );
   };
 
+  const handleDelete = (postId) => {
+    // Aquí puedes agregar la lógica para eliminar un post utilizando fetch
+    // usando la ruta http://localhost:3000/posts/{postId} con el método DELETE
+    // Recuerda actualizar el estado de posts después de eliminar
+  };
+
   return (
     <View>
       <FlatList
@@ -44,7 +50,7 @@ const YourComponent = () => {
             <Text>{item.title}</Text>
             {/* Renderizar comentarios para esta publicación */}
             {renderComments(item.id)}
-            {/* Agregar un botón para eliminar la publicación si es necesario */}
+            {/* Agregar un botón para eliminar la publicación */}
             <TouchableOpacity onPress={() => handleDelete(item.id)}>
               <Text>Eliminar Publicación</Text>
             </TouchableOpacity>
